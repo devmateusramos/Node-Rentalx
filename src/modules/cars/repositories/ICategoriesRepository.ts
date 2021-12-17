@@ -7,9 +7,9 @@ interface ICreateCategoryDTO {
 }
 
 interface ICategoriesRepository {
-  findByName(Name: string): Category;
-  list(): Category[];
-  create({ name, description }: ICreateCategoryDTO);
+  findByName(Name: string): Promise<Category>;
+  list(): Promise<Category[]>;
+  create({ name, description }: ICreateCategoryDTO): Promise<void>;
 }
 
 export { ICategoriesRepository, ICreateCategoryDTO };
